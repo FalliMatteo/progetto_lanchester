@@ -37,6 +37,8 @@ async function redManagement(battle){
     }
     battle.stop = true;
     console.log("BLUE WIN");
+    document.getElementById("result").innerHTML = "Vincono i Blu";
+    document.getElementById("result").classList.add("blue");
 }
 
 async function blueManagement(battle){
@@ -60,5 +62,8 @@ async function blueManagement(battle){
     }
     battle.stop = true;
     console.log("RED WIN");
+    document.getElementById("result").innerHTML = "Vincono i Rossi";
+    document.getElementById("result").classList.add("red");
+    
 }
 

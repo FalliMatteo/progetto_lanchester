@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>Battle Simulator</title>
 </head>
-<body>
+<body class="home-body" background="img/sfondo.jpg">
     <h1>Battle Simulator</h1>
     <form action="php/battle.php" method="post">
-        <label for="army1_size">Army 1 Size:</label>
-        <input type="number" id="army1_size" name="army1_size" min="1" max="25" required><br>
-        <label for="army1_power">Army 1 Power:</label>
-        <input type="number" id="army1_power" name="army1_power" min="0.01" max="2" required><br>
-        <label for="army2_size">Army 2 Size:</label>
-        <input type="number" id="army2_size" name="army2_size" min="1" max="25" required><br>
-        <label for="army2_power">Army 2 Power:</label>
-        <input type="number" id="army2_power" name="army2_power" min="0.01" max="2" required><br>
-        <button type="submit">Simulate Battle</button>
+        <span style="color:red"><b>Red army</b></span><br>
+        <input type="number" class="red-field" id="army2_size" name="army2_size" min="1" max="25" placeholder="Size" required><br>
+        <input type="number" class="red-field" id="army2_power" name="army2_power" step="0.01" max="2" placeholder="Power" required><br><br><br>
+        <span style="color: blue"><b>Blue army</b></span><br>
+        <input type="number" class="blue-field" id="army1_size" name="army1_size" min="1" max="25" placeholder="Size" required><br>
+        <input type="number" class="blue-field" id="army1_power" name="army1_power" step="0.01" max="2" placeholder="Power" required><br><br><br>
+        <button type="submit">Start battle</button>
     </form>
 </body>
 </html>
