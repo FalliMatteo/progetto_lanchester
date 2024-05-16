@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="img/icona.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
@@ -10,10 +11,10 @@
 <body class="home-body" background="img/sfondo.jpg">
     <h1>Battle Simulator</h1>
     <form action="php/battle.php" method="post">
-        <span style="color:red"><b>Red army</b></span><br>
+        <span class="red"><b>Red army</b></span><br>
         <input type="number" class="red-field" id="army2_size" name="army2_size" min="1" max="25" placeholder="Size" required><br>
         <input type="number" class="red-field" id="army2_power" name="army2_power" step="0.01" max="2" placeholder="Power" required><br><br><br>
-        <span style="color: blue"><b>Blue army</b></span><br>
+        <span class="blue"><b>Blue army</b></span><br>
         <input type="number" class="blue-field" id="army1_size" name="army1_size" min="1" max="25" placeholder="Size" required><br>
         <input type="number" class="blue-field" id="army1_power" name="army1_power" step="0.01" max="2" placeholder="Power" required><br><br><br>
         <button type="submit">Start battle</button>
