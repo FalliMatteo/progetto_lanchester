@@ -1,19 +1,11 @@
 function simulateBattle(army1Size, army1Power, army2Size, army2Power) {
     let blueArmy = {size: army1Size, power: army1Power};
     let redArmy = {size: army2Size, power: army2Power};
-    let battle = new Battle(redArmy, blueArmy);
+    let battle = {redArmy: redArmy, blueArmy: blueArmy, stop: false};
     setTimeout(3000);
     console.log("START");
     blueManagement(battle);
     redManagement(battle);
-}
-
-class Battle{
-    constructor(redArmy, blueArmy){
-        this.redArmy = redArmy;
-        this.blueArmy = blueArmy;
-        this.stop = false;
-    }
 }
 
 async function redManagement(battle){
