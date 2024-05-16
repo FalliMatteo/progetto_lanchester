@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Battle Simulator</title>
 </head>
-<body>
+<body onload="simulateBattle(<?php echo  $size1; ?>, <?php echo $power1; ?>, <?php echo $size2; ?>, <?php echo $power2; ?>)">
     <div id="battle-grid">
     <?php
         $army1 = [];
@@ -25,7 +25,7 @@
             if (!$grid[$gridX][$gridY]) {
                 $army1[] = ['x' => $x, 'y' => $y];
                 $grid[$gridX][$gridY] = true;
-                echo "<div id='army1_troop" . $i . "' class='troop' style='left: {$x}%; top: {$y}%; background-color: blue;'></div>";
+                echo "<div id='troop-" . $i . "-blue' class='troop' style='left: {$x}%; top: {$y}%; background-color: blue;'></div>";
             } else {
                 $i--;
             }
@@ -38,7 +38,7 @@
             if (!$grid[$gridX][$gridY]) {
                 $army2[] = ['x' => $x, 'y' => $y];
                 $grid[$gridX][$gridY] = true;
-                echo "<div id='army2_troop" . $i . "' class='troop' style='left: {$x}%; top: {$y}%; background-color: red;'></div>";
+                echo "<div id='troop-" . $i . "-red' class='troop' style='left: {$x}%; top: {$y}%; background-color: red;'></div>";
             } else {
                 $i--;
             }
