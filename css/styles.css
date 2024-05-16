@@ -103,3 +103,10 @@ h1 {
     color: blue;
 }
 
+#battle-button {
+    margin-left: 46%;
+    margin-right: 46%;
+    min-width: 8%;
+    font-size: 100%;
+}
+

@@ -31,6 +31,7 @@ async function redManagement(battle){
     console.log("BLUE WIN");
     document.getElementById("result").innerHTML = "Vincono i Blu";
     document.getElementById("result").classList.add("blue");
+    document.getElementById("battle-button").classList.remove("killed");
 }
 
 async function blueManagement(battle){
