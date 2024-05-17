@@ -1,21 +1,17 @@
-const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
-
-function simulateBattle(army1Size, army1Power, army2Size, army2Power) {
-    let blueArmy = {size: army1Size, power: army1Power};
-    let redArmy = {size: army2Size, power: army2Power};
-    let battle = {redArmy: redArmy, blueArmy: blueArmy, stop: false};
-    const wait = async () => {await sleep(3000)};
-    wait();
-    console.log("START");
-    //redManager = new Worker("../js/armyManager.js");
-    //blueManager = new Worker("../js/armyManager.js");
-    //redManager.postMessage({document: document, army: "red", battle: battle});
-    //blueManager.postMessage({document: document, army: "blue", battle: battle});
-    blueManagement(battle);
-    redManagement(battle);
+self.onmessage = function(event) {
+    let document = event.data.document;
+    let army = event.data.army;
+    let battle = event.data.battle;
+    if(army == "red"){
+        redManagement(document, battle);
+    }else{
+        blueManagement(document, battle);
+    }
 }
 
-async function redManagement(battle){
+const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
+
+function redManagement(document, battle) {
     const array = [];
     for(let i = 0 ; i < battle.redArmy.size; i++){
         array[i] = i;
@@ -45,7 +41,7 @@ async function redManagement(battle){
     }
 }
 
-async function blueManagement(battle){
+function blueManagement(document, battle) {
     const array = [];
     for(let i = 0 ; i < battle.blueArmy.size; i++){
         array[i] = i;

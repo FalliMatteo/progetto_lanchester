@@ -16,7 +16,7 @@
 </head>
 <body class="battle-body" onload="simulateBattle(<?php echo  $size1; ?>, <?php echo $power1; ?>, <?php echo $size2; ?>, <?php echo $power2; ?>)">
     <h1 id="result"></h1>
-    <button id="battle-button" class="killed" onclick="window.location.href = '../index.html'">Torna alla home</button>
+    <button id="battle-button" class="killed" onclick="window.location.href = '../index.html'">Return to home</button>
     <div id="battle-grid">
     <?php
         $army1 = [];
