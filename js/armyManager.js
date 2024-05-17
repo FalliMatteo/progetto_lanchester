@@ -16,17 +16,23 @@ async function redManagement(battle) {
         array[i] = i;
     }
     while(array.length > 0){
-        let num = battle.blueArmy.power * (battle.blueArmy.size ** 2);
-        await sleep(2000/num);
-        console.log(battle.stop)
-        if(battle.stop){
-            return;
-        }else{
-            battle.redArmy.size--;
-            const random = Math.floor(Math.random() * array.length);
-            let id = array[random];
-            array.splice(random, 1);
-            self.postMessage({method: 1, num: id});
+        let num = battle.blueArmy.power * battle.blueArmy.size;
+        for(let j = 0; j < Math.floor(num/2)+1; j++){
+            await sleep(1000/num);
+            if(battle.stop){
+                return;
+            }else{
+                console.log(battle.stop)
+                if(array.length <= 0){
+                    break;
+                }else{
+                    battle.redArmy.size--;
+                    const random = Math.floor(Math.random() * array.length);
+                    let id = array[random];
+                    array.splice(random, 1);
+                    self.postMessage({method: 1, num: id});
+                }
+            }
         }
     }
     battle.stop = true;
@@ -39,17 +45,23 @@ async function blueManagement(battle) {
         array[i] = i;
     }
     while(array.length > 0){
-        let num = battle.redArmy.power * (battle.redArmy.size ** 2);
-        await sleep(2000/num);
-        console.log(battle.stop)
-        if(battle.stop){
-            return;
-        }else{
-            battle.blueArmy.size--;
-            const random = Math.floor(Math.random() * array.length);
-            let id = array[random];
-            array.splice(random, 1);
-            self.postMessage({method: 1, num: id});
+        let num = battle.redArmy.power * battle.redArmy.size;
+        for(let j = 0; j < Math.floor(num/2)+1; j++){
+            await sleep(1000/num);
+            if(battle.stop){
+                return;
+            }else{
+                console.log(battle.stop)
+                if(array.length <= 0){
+                    break;
+                }else{
+                    battle.blueArmy.size--;
+                    const random = Math.floor(Math.random() * array.length);
+                    let id = array[random];
+                    array.splice(random, 1);
+                    self.postMessage({method: 1, num: id});
+                }
+            }
         }
     }
     battle.stop = true;
