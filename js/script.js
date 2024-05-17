@@ -1,8 +1,14 @@
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
+
+async function wait(time){
+    await sleep(time);
+}
+
 function simulateBattle(army1Size, army1Power, army2Size, army2Power) {
     let blueArmy = {size: army1Size, power: army1Power};
     let redArmy = {size: army2Size, power: army2Power};
     let battle = {redArmy: redArmy, blueArmy: blueArmy, stop: false};
-    setTimeout(3000);
+    wait(3000);
     console.log("START");
     blueManagement(battle);
     redManagement(battle);
@@ -15,7 +21,7 @@ async function redManagement(battle){
     }
     while(array.length > 0){
         let num = battle.blueArmy.power * (battle.blueArmy.size ** 2);
-        setTimeout(1000/num);
+        wait(1000/num);
         if(battle.stop){
             break;
         }else{
@@ -41,7 +47,7 @@ async function blueManagement(battle){
     }
     while(array.length > 0){
         let num = battle.redArmy.power * (battle.redArmy.size ** 2);
-        setTimeout(1000/num);
+        wait(1000/num);
         if(battle.stop){
             break;
         }else{
